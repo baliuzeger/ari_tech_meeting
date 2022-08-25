@@ -8,17 +8,19 @@ def Foo(i):
   
 def Bar(arg):
     print('-->exec done:',arg)
+    return arg
 
 if __name__ == '__main__':
     with Pool(processes=5) as pool:
-        rs = []
+        #rs = []
         for i in range(10):
             print('i: ', i)
             r = pool.apply_async(func=Foo, args=(i,),callback=Bar)
-            rs.append(r)
+        #    rs.append(r)
             #pool.apply(func=Foo, args=(i,))
         #for r in rs:
         #    r.wait()
+        #    print(f"get {r.get()}")
         print('after apply_async, before close & join.')
         pool.close()
         pool.join()
