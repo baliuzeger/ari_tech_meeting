@@ -11,7 +11,7 @@
 ```
 python -m pipe.proc
 ```
-這樣在`pipe/proc.py`可以成功另一子資料夾`src`內的`foo.py`的函數`foo`。直接使用`python pipe/proc.py`會無法成功import。要成功import需要多做
+這樣在`pipe/proc.py`可以成功引用另一子資料夾`src`內的`foo.py`的函數`foo`。直接使用`python pipe/proc.py`會無法成功import。要成功import需要多做
 ```
 export PYTHONPATH="${PYTHONPATH}:<your-project-path>" 
 ```
